@@ -7,6 +7,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +42,9 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    Logger.addLogAdapter(new AndroidLogAdapter());
     SoLoader.init(this, /* native exopackage */ false);
   }
+
+
 }
