@@ -7,7 +7,7 @@ const AppNavigator = createStackNavigator({
   Map
 },{
   initialRouteName: "HomeScreen",
-  mode: 'card',
+  mode: 'modal',
   headerMode: 'none',
 })
 const AppContainer = createAppContainer(AppNavigator);
