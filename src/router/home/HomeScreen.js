@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Animated, Dimensions } from 'react-native
 import React, { useState, useCallback, useEffect } from 'react'
 import { connect } from 'react-redux'
 const { width, height } = Dimensions.get('screen')
+
 const HomeScreen = (props) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 })
   const [originCoords, setOriginCoords] = useState({ x: 0, y: 0 })
@@ -15,12 +16,13 @@ const HomeScreen = (props) => {
             y: evt.nativeEvent.locationX,
             x: evt.nativeEvent.locationY
           })
+          props.navigation.navigate('Map')
           console.log('onResponderGrant', evt.nativeEvent)
           return true
         }}
         onMoveShouldSetResponder={e => true}
         onResponderMove={(e) => {
-          console.log('onResponderMove', e.nativeEvent)
+          // console.log('onResponderMove', e.nativeEvent)
           const {x, y} = originCoords;
           setCoords({
             y: e.nativeEvent.pageY - x,
@@ -29,7 +31,7 @@ const HomeScreen = (props) => {
         }}
         onResponderRelease={e => {
           setBackgroundColor('red')
-          console.log('onResponderRelease', originCoords)
+          // console.log('onResponderRelease', originCoords)
           const {x, y} = originCoords;
           setCoords({
             y: e.nativeEvent.pageY - x,

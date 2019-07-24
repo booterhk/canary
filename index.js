@@ -14,7 +14,6 @@ const app = dva({
     console.log('onError', e);
   },
 });
-console.log('Router',Router)
 const App = app.start(<Router />);
 console.disableYellowBox = true;
 AppRegistry.registerComponent(appName, () => App);

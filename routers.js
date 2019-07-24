@@ -1,12 +1,13 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation'
-import {HomeScreen, Map} from './src/router'
+import {HomeScreen, Map, WebView} from './src/router'
 import React from 'react'
 
 const AppNavigator = createStackNavigator({ 
   HomeScreen,
-  Map
+  Map,
+  WebView
 },{
-  initialRouteName: "HomeScreen",
+  initialRouteName: "WebView",
   mode: 'modal',
   headerMode: 'none',
 })
